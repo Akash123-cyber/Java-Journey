@@ -1,0 +1,82 @@
+Rule:
+If a Java class is declared public, the name of the file must match the name of the class, 
+and the file must have the .java extension. If the names do not match, the Java compiler will throw an error.
+
+For example:
+
+If you declare a public class as 
+code : public class MyClass the //file name must be MyClass.java.
+
+
+What happens if the class is not public?
+
+If the class is not declared as public, there is no requirement for the file name to match the class name.
+However, in such cases, you cannot access the class from outside the package unless you define it as public.
+
+1. Java Packages
+A package is a namespace that organizes classes and interfaces.
+Classes within the same package can access each other freely (subject to access modifiers).
+Classes in different packages need to follow access rules to interact with each other.
+
+code:
+package mypackage; // A package declaration
+class MyClass {
+    void greet() {
+        System.out.println("Hello from MyClass");
+    }
+}
+
+
+This line relates to Java's access control mechanism and the concept of packages. Let me break it down step by step:
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Access Control in Java
+Java defines the following access levels (via access modifiers):
+
+Modifier	            Same Class	    Same Package	Subclass in Same Package	Subclass in Different Package	        Other Packages
+public	                    ✅	            ✅	                ✅	                          ✅	                            ✅
+Default (no modifier)	    ✅	            ✅	                ✅	                          ❌	                            ❌
+protected	                ✅	            ✅	                ✅	                          ✅(via inheritance only)	    ❌
+private	                    ✅	            ❌	                ❌	                          ❌	                            ❌
+
+
+
+Detailed Explanation of Each Row
+public:
+
+Accessible from anywhere: same class, same package, subclasses (even in other packages), and non-subclass classes in other packages. ✅
+Default (no modifier):
+
+Accessible only within the same package.
+Cannot be accessed by classes in other packages, even by subclasses. ❌
+protected:
+
+Accessible in the same package (like default access).
+Accessible to subclasses in other packages, but only through inheritance (not via an object reference).
+Example: A subclass in another package can access a protected member only if it overrides or inherits the member.
+Direct access to a protected member through an instance in another package is not allowed.
+private:
+
+Accessible only within the same class.
+Not accessible in the same package, by subclasses, or in other packages.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Why Make a Class Non-Public?
+
+If a class is only meant to be used internally within a package, you can omit the public modifier.
+This encapsulates the class and prevents accidental use outside the intended context.
+Example Use Case:
+A library may have internal utility classes (Helper, Parser) that are not relevant to end-users. These can be package-private.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Accessibility of a Private Class
+Private Class
+In Java, a class cannot be declared as private if it is a top-level class (i.e., a class defined directly in a file).
+
+However, nested classes (classes declared inside another class) can be private.
+
+Accessibility of Private Classes:
+A private nested class is accessible only within its enclosing (outer) class.
+Other classes, even in the same package, cannot access the private class or its members.

@@ -1,0 +1,60 @@
+
+Memory allocation in java(2 types: Stack and Heap memory)
+
+Stack memory 
+Stack Memory in Java is used for static memory allocation and the
+execution of a thread. It contains primitive values that are specific to a
+method and references to objects that are in a heap, referred from the
+method.
+Access to this memory is in Last-In-First-Out (LIFO) order. Whenever a
+new method is called, a new block on top of the stack is created which
+contains values specific to that method, like primitive variables and
+references to objects.
+When the method finishes execution, it’s corresponding stack frame is
+flushed, the flow goes back to the calling method and space becomes
+available for the next method.
+
+Stack Memory
+➢ It grows and shrinks as new methods are called and returned
+respectively
+➢ Variables inside stack exist only as long as the method that
+created them is running
+➢ It's automatically allocated and deallocated when method
+finishes execution
+➢ If this memory is full, Java 
+throws java.lang.StackOverFlowError
+➢ Access to this memory is fast when compared to heap
+memory
+
+
+
+Heap memory
+Heap space in Java is used for dynamic memory allocation for Java objects and
+JRE classes at the runtime. New objects are always created in heap space and the
+references to this objects are stored in stack memory.
+These objects have global access and can be accessed from anywhere in the
+application.
+
+This memory model is further broken into smaller parts called generations, these are:
+Young Generation – this is where all new objects are allocated and aged. A minor
+Garbage collection occurs when this fills up
+Old or Tenured Generation – this is where long surviving objects are stored. When
+objects are stored in the Young Generation, a threshold for the object's age is set
+and when that threshold is reached, the object is moved to the old generation
+Permanent Generation – this consists of JVM metadata for the runtime classes and
+application methods, static or class variables also.
+Key features of Heap memory
+
+➢ It's accessed via complex memory management techniques
+that include Young Generation, Old or Tenured Generation,
+and Permanent Generation
+➢ If heap space is full, Java throws java.lang.OutOfMemoryError
+➢ Access to this memory is relatively slower than stack memory
+➢ This memory, in contrast to stack, isn't automatically
+deallocated. It needs Garbage Collector to free up unused
+objects so as to keep the efficiency of the memory usage
+
+Memory layout
+Here rollNo,Name are object specific attributes(instance variables),college is the 
+static member(or class variable),s1 and s2 are references to the objects,printDetail() 
+is the method,count and count2 are the local variables of their respective methods
