@@ -66,6 +66,8 @@ Welcome to my Java learning repository! This repository documents my journey of 
 ## 🤝 Contributing
 
 Feel free to:
+
+- many units are not complete they will be added shortly
 - Fork this repository
 - Submit pull requests
 - Share your own learning experiences
