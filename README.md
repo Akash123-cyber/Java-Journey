@@ -53,10 +53,10 @@ Welcome to my Java learning repository! This repository documents my journey of 
 ├── Questions/           # Practice questions and exercises
 ├── Unit1/              # Basic Java concepts
 ├── Unit2/              # Intermediate concepts
-├── Unit3/              # Advanced topics
-├── Unit4/              # Additional advanced materials
-├── Unit5/              # Special topics
-├── Unit6/              # Advanced applications
+├── Unit3/              # Advanced topics (going to be added shortly)
+├── Unit4/              # Additional advanced materials (going to be added shortly)
+├── Unit5/              # Special topics (going to be added shortly)
+├── Unit6/              # Advanced applications (going to be added shortly)
 ├── DifferenceBetweenC++,Python_and_Java  # Language comparison guide
 ├── JavaBasics.pdf      # Core Java concepts reference
 └── README.md           # This file
